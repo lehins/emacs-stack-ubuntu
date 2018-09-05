@@ -1,9 +1,10 @@
 #!/usr/bin/env stack
 {- stack
   --resolver lts-12.2 script
-  --package rio
   --package directory
-  --package filepath -}
+  --package filepath
+  --package rio
+  --package yaml -}
 
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE LambdaCase #-}

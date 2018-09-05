@@ -21,7 +21,6 @@
     company
     hindent
     undo-tree
-    dante
     hasky-stack
     hasky-extensions
     ) "a list of packages to ensure are installed at launch for haskell dev environment.")
