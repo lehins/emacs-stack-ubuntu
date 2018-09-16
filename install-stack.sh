@@ -15,5 +15,3 @@ which stack && stack upgrade || {
 # fi
 # EOF
 }
-
-PATH="$HOME/.local/bin:$PATH" ./install-emacs.hs

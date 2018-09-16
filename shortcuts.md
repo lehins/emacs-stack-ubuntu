@@ -18,6 +18,8 @@
 `C-x C-s` -- save
 
 
+`M-w` -- copy selection
 
+`C-y` -- paste clipboard
 
 
