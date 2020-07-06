@@ -1,6 +1,6 @@
 #!/usr/bin/env stack
 {- stack
-  --resolver lts-12.2 script
+  --resolver lts-12.26 script
   --package directory
   --package filepath
   --package rio
@@ -20,7 +20,7 @@ import System.IO as IO
 
 -- | For faster bootstarpping update together with --resolver in header ^
 resolver :: String
-resolver = "lts-12.2"
+resolver = "lts-12.26"
 
 data Command
   = Install
@@ -87,9 +87,9 @@ setupEmacs version
 main :: IO ()
 main =
   runSimpleApp $ do
-    stackInstall ["hindent", "hlint", "stylish-haskell"]
-    setupEmacs 26
-    let pkgs = ["git"]
+    let pkgs = ["git", "libtinfo-dev"]
     aptGet Install ("-y" : pkgs)
+    stackInstall ["intero", "hindent", "hlint", "stylish-haskell"]
+    setupEmacs 26
     -- TODO: add -fshow-loaded-modules to ghci as described in:
     -- https://github.com/haskell/haskell-mode/issues/1553#issuecomment-408929720

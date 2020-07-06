@@ -20,6 +20,7 @@
     haskell-mode
     company
     hindent
+    dante
     undo-tree
     hasky-stack
     hasky-extensions
@@ -128,3 +129,10 @@
 
 (add-hook 'haskell-mode-hook #'hindent-mode)
 (setq hindent-style "johan-tibell")
+
+(add-hook 'haskell-mode-hook 'dante-mode)
+(setq dante-repl-command-line '("stack" "ghci" "--no-build" "--no-load" "--test" "--bench"))
+(setq dante-methods '(stack styx new-nix new-impure-nix nix impure-nix new-build nix-ghci mafia bare-cabal bare-ghci))
+(add-hook 'dante-mode-hook
+   '(lambda () (flycheck-add-next-checker 'haskell-dante
+                                          '(warning . haskell-hlint))))
